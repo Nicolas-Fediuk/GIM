@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cf79cb7b-1d4d-401e-b2ec-9b14d4c670ff": {
+      "ProjectGuid": "cf79cb7b-1d4d-401e-b2ec-9b14d4c670ff",
+      "DisplayName": "Vistas",
+      "ColorIndex": 0
+    },
+    "82d89e20-9612-44c4-b9e1-0beb125e8ae1": {
+      "ProjectGuid": "82d89e20-9612-44c4-b9e1-0beb125e8ae1",
+      "DisplayName": "CapaNegocio",
+      "ColorIndex": 1
+    },
+    "80690942-c352-4bf1-987b-1cc4e3481dc8": {
+      "ProjectGuid": "80690942-c352-4bf1-987b-1cc4e3481dc8",
+      "DisplayName": "CapaDao",
+      "ColorIndex": 2
+    },
+    "256c6d5b-fd66-4978-9744-2fbea22d11ee": {
+      "ProjectGuid": "256c6d5b-fd66-4978-9744-2fbea22d11ee",
+      "DisplayName": "Entidades",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
