@@ -10,8 +10,8 @@ go
 
 create table Admin
 (
-Nombre_ad varchar(30),
-Contraseña_ad varchar(30),
+Nombre_ad varchar(30) not null,
+Contraseña_ad varchar(30) not null,
 
 constraint PK_Admin primary key (Nombre_ad)
 )
@@ -19,10 +19,11 @@ go
 
 create table Rutinas
 (
-Nombre_ru varchar(50) not null,
+IdRutina_ru int not null identity(1,1),
+Nombre_ru varchar(50) not null unique,
 Estado_ru bit default '1',
 
-constraint PK_Rutinas primary key (Nombre_ru)
+constraint PK_Rutinas primary key (IdRutina_ru)
 )
 go
 
@@ -39,11 +40,11 @@ Telefono_cli char(10) null unique default 'sin telefono',
 Email_cli varchar(30) null unique default 'sin email',
 Direccion_cli varchar(40) not null,
 ProblemasDeSalud_cli text not null,
-NombreRutina_cli varchar(50) not null,
+IdRutina_cli int not null,
 Estado_cli bit default '1' not null,
 
 constraint PK_Clientes  primary key (IdCliente_cli),
-constraint FK_Clientes_Rutinas foreign key (NombreRutina_cli) references Rutinas(Nombre_ru)
+constraint FK_Clientes_Rutinas foreign key (IdRutina_cli) references Rutinas(IdRutina_ru)
 )
 go
 
@@ -74,13 +75,11 @@ create table Ventas
 (
 IdVenta_ve bigint identity(1,1),
 IdCliente_ve bigint not null,
-Total_ve decimal not null,
+Total_ve decimal not null default 0,
 FechaVenta_ve date not null default getdate(),
 MetodoDePago bit not null,
 
 constraint CK_Ventas_Total_ve check (Total_ve > 0),
-
-constraint CK_Ventas_FechaVenta_ve check (FechaVenta_ve >= getdate()),
 
 constraint PK_Ventas primary key (IdVenta_ve),
 
@@ -100,13 +99,14 @@ go
 
 create table Cuotas
 (
-TipoCuota_cuo varchar(30) not null,
+IdTipoCuota_cuo int not null identity(1,1),
+DescripcionCuota_cuo varchar(30) not null unique,
 Precio_cuo decimal not null,
 Estado_cuo bit default '1',
 
 constraint CK_Cuotas_Precio check (Precio_cuo > 0),
 
-constraint PK_Cuotas primary key (TipoCuota_cuo)
+constraint PK_Cuotas primary key (IdTipoCuota_cuo)
 )
 go
 
@@ -117,7 +117,7 @@ create table DetalleVentasCuotas
 (
 IdVenta_dvc bigint not null,
 IdCliente_dvc bigint not null,
-TipoCuota_dvc varchar(30) not null,
+IdTipoCuota_dvc int not null,
 Precio_dvc decimal not null,
 FechaInicio_dvc date not null default getdate(),
 FechaFin_dvc date not null,
@@ -126,13 +126,13 @@ constraint CK_DetalleVentasCuotas_Precio check (Precio_dvc > 0),
 
 constraint CK_DetalleVentasCuotas_FechaFin check (FechaFin_dvc > getdate()),
 
-constraint PK_DetalleVentasCuotas primary key (IdVenta_dvc,IdCliente_dvc,TipoCuota_dvc),
+constraint PK_DetalleVentasCuotas primary key (IdVenta_dvc,IdCliente_dvc,IdTipoCuota_dvc),
 
 constraint FK_DetalleVentasCuotas_Ventas foreign key (IdVenta_dvc) references Ventas(IdVenta_ve),
 
 constraint FK_DetalleVentasCuotas_Clientes foreign key (IdCliente_dvc) references Clientes(IdCliente_cli),
 
-constraint FK_DetalleVentasCuotas_Cuotas foreign key (TipoCuota_dvc) references Cuotas(TipoCuota_cuo),
+constraint FK_DetalleVentasCuotas_Cuotas foreign key (IdTipoCuota_dvc) references Cuotas(IdTipoCuota_cuo),
 )
 go
 
@@ -142,7 +142,7 @@ go
 create table CategoriasProductos
 (
 IdCategoria_cp bigint identity(1,1) not null,
-Descripcion_cp varchar(30) not null,
+Descripcion_cp varchar(30) not null unique,
 Estado_co bit not null default '1',
 
 constraint PK_CategoriasProductos primary key (IdCategoria_cp)
@@ -156,7 +156,7 @@ create table Productos
 (
 CodArticulo_p char(10) not null,
 Categoria_p bigint not null,
-Descripcion_p varchar(255) not null,
+Descripcion_p varchar(255) not null unique,
 Stock_p bigint not null,
 Precio_p decimal not null,
 Imagen_p varchar(100) null default 'sin imagen',

@@ -17,9 +17,9 @@ go
 select * from Rutinas
 go
 
-insert into Clientes(Nombre_cli,Apellido_cli,Edad_cli,Telefono_cli,Email_cli,Direccion_cli,ProblemasDeSalud_cli,NombreRutina_cli)
-select 'Pablo','Cabrebra','34','3329567834','pablo@gmail.com','benecfatora sampedrinas 2110','asma','musculacion' union
-select 'Andrea','quinteros','23','3329346974','andrea@gmail.com','benecfatora sampedrinas 2115','ninguno','aerobico'
+insert into Clientes(Nombre_cli,Apellido_cli,Edad_cli,Telefono_cli,Email_cli,Direccion_cli,ProblemasDeSalud_cli,IdRutina_cli)
+select 'Pablo','Cabrebra','34','3329567834','pablo@gmail.com','benecfatora sampedrinas 2110','asma',1 union
+select 'Andrea','quinteros','23','3329346974','andrea@gmail.com','benecfatora sampedrinas 2115','ninguno',2
 go
 
 select * from Clientes
@@ -30,11 +30,13 @@ select 1,'Pablo Esteban Cabrera','Galicia',0,123456789,'01/02/2025',123 union
 select 2,'Andrea Paola Quinteros','Frances',1,987654321,'05/05/2028',216 
 go
 
-insert into Cuotas(TipoCuota_cuo,Precio_cuo)
+insert into Cuotas(DescripcionCuota_cuo,Precio_cuo)
 select 'Mensual',3000 union
 select 'Semanal',975 union
 select 'Dia',125
 go
+
+select * from Cuotas;
 
 insert into CategoriasProductos(Descripcion_cp)
 select 'Bebidas' union
@@ -56,7 +58,7 @@ select * from Ventas
 go
 
 insert into DetalleVentasProductos(IdVenta_dvp,IdCliente_dvp,CodArticulo_dvp,Cantidad_dvp,Precio_dvp)
-select 2,2,'b001',2,120
+select 1,2,'b001',2,120
 go
 
 select * from DetalleVentasProductos
@@ -66,8 +68,8 @@ insert into Ventas(IdCliente_ve,Total_ve,MetodoDePago)
 select 1,3000,0
 go
 
-insert into DetalleVentasCuotas(IdVenta_dvc,IdCliente_dvc,TipoCuota_dvc,Precio_dvc,FechaFin_dvc)
-select 3,1,'Mensual',3000,'2022/02/13'
+insert into DetalleVentasCuotas(IdVenta_dvc,IdCliente_dvc,IdTipoCuota_dvc,Precio_dvc,FechaFin_dvc)
+select 2,1,2,3000,'2022/02/13'
 go
 
 select * from DetalleVentasCuotas
