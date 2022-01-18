@@ -10,7 +10,7 @@ namespace Entidades
     {
         private int IdCategoria;
         private string Descripcion;
-        private int Estado;
+        private bool Estado;
 
         public CategoriasProductos()
         {
@@ -19,6 +19,6 @@ namespace Entidades
 
         public int IdCategoria1 { get => IdCategoria; set => IdCategoria = value; }
         public string Descripcion1 { get => Descripcion; set => Descripcion = value; }
-        public int Estado1 { get => Estado; set => Estado = value; }
+        public bool Estado1 { get => Estado; set => Estado = value; }
     }
 }
