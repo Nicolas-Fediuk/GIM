@@ -44,13 +44,16 @@ where IdCategoria_cp = @IDCATEGORIA
 return
 go
 
-create procedure sp_AgregarCategoriaProductos
+create procedure sp_ModificarCategorias
 (
+@IDCATEGORIA bigint,
 @DESCRIPCION varchar(30)
 )
-as 
-insert into CategoriasProductos(Descripcion_cp)
-values(@DESCRIPCION)
+as
+update CategoriasProductos
+set
+Descripcion_cp = @DESCRIPCION
+where IdCategoria_cp = @IDCATEGORIA
 return
 go
 
@@ -121,9 +124,9 @@ values (@NOMBRE_RU)
 return
 go
 
-create procedure sp_EliminarRutina
+create or alter procedure sp_EliminarRutina
 (
-@IDRITINA_RU varchar(50)
+@IDRITINA_RU int
 )
 as
 update Rutinas
