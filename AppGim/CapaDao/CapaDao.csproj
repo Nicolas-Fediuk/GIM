@@ -45,9 +45,12 @@
     <Compile Include="DaoCategoriaProducto.cs" />
     <Compile Include="DaoClientes.cs" />
     <Compile Include="DaoCuotas.cs" />
+    <Compile Include="DaoDetalleVentaCuota.cs" />
+    <Compile Include="DaoDetalleVentaProducto.cs" />
     <Compile Include="DaoProductos.cs" />
     <Compile Include="DaoRutinas.cs" />
     <Compile Include="DaoTarjetas.cs" />
+    <Compile Include="DaoVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
