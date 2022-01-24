@@ -38,7 +38,7 @@ namespace CapaDao
             return tabla;
         }
 
-        public Boolean ExisteDetalleVentaProducto(DetalleVentasCuota dc)
+        public Boolean ExisteDetalleVentaProducto(DetalleVentasProductos dc)
         {
             string consulta = TodoDetalleVentaProducto + " where IdVenta_dvp= " + dc.IdVenta1.IdVenta1;
             return ad.existe(consulta);

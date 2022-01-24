@@ -24,7 +24,7 @@ namespace CapaDao
             return c;
         }
 
-        public DataTable getTablaCuota(Cuotas c)
+        public DataTable getTablaCuotaId(Cuotas c)
         {
             string consulta = TodoCuota + "where IdTipoCuota_cuo= " + c.IdTipoCuota1;
             DataTable tabla = ad.ObtenerTabla("Cuotas", consulta);

@@ -43,6 +43,13 @@
   <ItemGroup>
     <Compile Include="GestionArticulos.cs" />
     <Compile Include="GestionCategoriaArticulos.cs" />
+    <Compile Include="GestionClientes.cs" />
+    <Compile Include="GestionCuota.cs" />
+    <Compile Include="GestionDetalleVentaCuota.cs" />
+    <Compile Include="GestionDetalleVentaProducto.cs" />
+    <Compile Include="GestionRutinas.cs" />
+    <Compile Include="GestionTarjetas.cs" />
+    <Compile Include="GestionVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
