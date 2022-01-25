@@ -36,5 +36,49 @@ namespace CapaNegocio
             }
         }
 
+        public bool AgregarRutina(Rutinas r)
+        {
+            int fila = 0;
+            if (dao.ExisteRutina(r) == false)
+            {
+                fila = dao.AgregarRutina(r);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        
+        }
+        
+        public bool ModificarRutina(Rutinas r)
+        {
+            bool modificado = dao.ModificarRutina(r);
+            if (modificado)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarRutina(Rutinas r)
+        {
+            int eliminado = dao.EliminarRutina(r);
+
+            if(eliminado == 1){
+                return true;
+            }
+            else
+            {
+                return false ;
+            }
+        }
     }
 }

@@ -36,5 +36,24 @@ namespace CapaNegocio
                 return false;
             }
         }
+
+        public bool AgregarDetalleVentaProducto(DetalleVentasProductos dvp)
+        {
+            int fila = 0;
+
+            if (dao.ExisteDetalleVentaProducto(dvp) == false)
+            {
+                fila = dao.AgregarDetalleVentaProducto(dvp);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

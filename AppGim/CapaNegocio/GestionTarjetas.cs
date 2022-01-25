@@ -35,5 +35,50 @@ namespace CapaNegocio
                 return false;
             }
         }
+
+        public bool AgregarTarjeta(Tarjetas t)
+        {
+            int fila = 0;
+            if (dao.ExisteTarjeta(t) == false)
+            {
+                fila = dao.AgregarTarjeta(t);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarTarjeta(Tarjetas t)
+        {
+            bool modificado = dao.ModificarTarjeta(t);
+
+            if (modificado)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        public bool EliminarTarjeta(Tarjetas t)
+        {
+            int eliminado = dao.EliminarTarjeta(t);
+
+            if (eliminado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

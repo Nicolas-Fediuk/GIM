@@ -36,5 +36,24 @@ namespace CapaNegocio
                 return false;
             }
         }
+
+        public bool AgregarVenta(Ventas v)
+        {
+            int fila = 0;
+
+            if (dao.ExisteVenta(v) == true)
+            {
+                fila = dao.AgregarVenta(v);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

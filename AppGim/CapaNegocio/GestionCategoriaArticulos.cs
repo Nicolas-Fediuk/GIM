@@ -56,8 +56,8 @@ namespace CapaNegocio
 
         public bool ModificarCategoriaProducto(CategoriasProductos cp)
         {
-            bool eliminado = dao.ModificarCategoria(cp);
-            if(eliminado == false)
+            bool modificado = dao.ModificarCategoria(cp);
+            if(modificado == false)
             {
                 return false;
             }

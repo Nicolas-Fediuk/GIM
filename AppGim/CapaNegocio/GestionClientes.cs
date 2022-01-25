@@ -35,5 +35,50 @@ namespace CapaNegocio
                 return false;
             }
         }
+
+        public bool AgregarCliente(Clientes cli)
+        {
+            int fila = 0;
+            if (dao.ExisteCliente(cli) == false)
+            {
+                fila = dao.AgregarCliente(cli);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarCliente(Clientes cli)
+        {
+            bool modificado = dao.ModificarCliente(cli);
+            if (modificado)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+        public bool EliminarCliente(Clientes cli)
+        {
+            int eliminado = dao.EliminarCLiente(cli);
+            if (eliminado==1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

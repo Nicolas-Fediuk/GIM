@@ -35,5 +35,50 @@ namespace CapaNegocio
                 return false;
             }
         }
+
+        public bool AgregarCuota (Cuotas cuo)
+        {
+            int fila = 0;
+            if (dao.ExisteCuota(cuo) == false)
+            {
+                fila = dao.AgregarCuota(cuo);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarCuota(Cuotas cuo)
+        {
+            bool modificado = dao.ModificarCuota(cuo);
+            if(modificado == false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool EliminarCuota(Cuotas cuo)
+        {
+            int eliminado = dao.EliminarCuota(cuo);
+
+            if(eliminado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

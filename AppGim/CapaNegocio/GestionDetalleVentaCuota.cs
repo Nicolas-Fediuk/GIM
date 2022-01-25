@@ -36,5 +36,23 @@ namespace CapaNegocio
                 return true;
             }
         }
+
+        public bool AgregarDetalleVentaCuota(DetalleVentasCuota dvc)
+        {
+            int fila = 0;
+            if (dao.ExisteDetalleVentaCuota(dvc) == false)
+            {
+                fila = dao.AgregarDetalleVentaCuota(dvc);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

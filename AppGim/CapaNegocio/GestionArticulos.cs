@@ -35,5 +35,50 @@ namespace CapaNegocio
                 return false;   
             }
         }
+
+        public bool AgregarArticulo(Productos p)
+        {
+            int fila = 0;
+            if (dao.ExisteProducto(p))
+            {
+                fila = dao.AgregarProducto(p);
+            }
+
+            if(fila == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarArticulo(Productos p)
+        {
+            bool modificado = dao.ModificarProducto(p);
+            if (modificado)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarArticulo(Productos p)
+        {
+            int eliminado = dao.EliminarProducto(p);
+
+            if (eliminado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
