@@ -45,7 +45,7 @@ namespace CapaDao
 
         public int AgregarCuota(Cuotas c)
         {
-            SqlCommand comando = new SqlCommand;
+            SqlCommand comando = new SqlCommand();
             ArmarParamatrosCuotaAgregar(ref comando, c);
             return ad.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarCuota");
         }

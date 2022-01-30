@@ -1,0 +1,9 @@
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\obj\Debug\CapaDao.csproj.AssemblyReference.cache
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\obj\Debug\CapaDao.csproj.CoreCompileInputs.cache
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\bin\Debug\CapaDao.dll
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\bin\Debug\CapaDao.pdb
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\bin\Debug\Entidades.dll
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\bin\Debug\Entidades.pdb
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\obj\Debug\CapaDao.csproj.CopyComplete
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\obj\Debug\CapaDao.dll
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaDao\obj\Debug\CapaDao.pdb

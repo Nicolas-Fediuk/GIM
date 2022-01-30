@@ -1,0 +1,11 @@
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\bin\Debug\CapaDao.dll
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\bin\Debug\Entidades.dll
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\bin\Debug\CapaDao.pdb
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\bin\Debug\Entidades.pdb
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Educa informatica\Desktop\Gim\AppGim\CapaNegocio\obj\Debug\CapaNegocio.pdb

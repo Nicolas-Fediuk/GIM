@@ -1,0 +1,27 @@
+﻿*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+   cursor:c
+}
+p{
+    font-size: 20px;
+    display:inline-block;
+}
+body {
+    background-color: aqua;
+    text-align: center;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+}
+main{
+    
+}
+
+.label{
+    font-size: 20px;
+    color:green;
+}
+
+
