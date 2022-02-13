@@ -67,12 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Clientes\AgregarClientes.aspx" />
+    <Content Include="Clientes\TodosLosClientes.aspx" />
     <Content Include="Estilos.css" />
     <Content Include="HomeAdmin.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\AgregarClientes.aspx.cs">
+      <DependentUpon>AgregarClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes\AgregarClientes.aspx.designer.cs">
+      <DependentUpon>AgregarClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\TodosLosClientes.aspx.cs">
+      <DependentUpon>TodosLosClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes\TodosLosClientes.aspx.designer.cs">
+      <DependentUpon>TodosLosClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomeAdmin.aspx.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +123,9 @@
       <Project>{256c6d5b-fd66-4978-9744-2fbea22d11ee}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Productos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

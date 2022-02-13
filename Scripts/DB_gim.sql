@@ -19,7 +19,7 @@ go
 
 create table Rutinas
 (
-IdRutina_ru int not null identity(1,1),
+IdRutina_ru int identity(1,1),
 Nombre_ru varchar(50) not null unique,
 Estado_ru bit default '1',
 
@@ -36,12 +36,12 @@ IdCliente_cli bigint identity(1,1),
 Nombre_cli varchar(30) not null,
 Apellido_cli varchar(30) not null,
 Edad_cli char(2) not null,
-Telefono_cli char(10) null unique default 'sin telefono',
-Email_cli varchar(30) null unique default 'sin email',
+Telefono_cli char(10) not null default 'sin telefono',
+Email_cli varchar(30) not null default 'sin email',
 Direccion_cli varchar(40) not null,
 ProblemasDeSalud_cli text not null,
 IdRutina_cli int not null,
-Estado_cli bit default '1' not null,
+Estado_cli bit default '0' not null,
 
 constraint PK_Clientes  primary key (IdCliente_cli),
 constraint FK_Clientes_Rutinas foreign key (IdRutina_cli) references Rutinas(IdRutina_ru)
@@ -78,8 +78,6 @@ IdCliente_ve bigint not null,
 Total_ve decimal not null default 0,
 FechaVenta_ve date not null default getdate(),
 MetodoDePago bit not null,
-
-constraint CK_Ventas_Total_ve check (Total_ve > 0),
 
 constraint PK_Ventas primary key (IdVenta_ve),
 
@@ -120,7 +118,7 @@ IdCliente_dvc bigint not null,
 IdTipoCuota_dvc int not null,
 Precio_dvc decimal not null,
 FechaInicio_dvc date not null default getdate(),
-FechaFin_dvc date not null,
+FechaFin_dvc date null,
 
 constraint CK_DetalleVentasCuotas_Precio check (Precio_dvc > 0),
 

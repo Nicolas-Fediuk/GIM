@@ -9,27 +9,33 @@
 <title>Login - GIM</title>
 </head>
 <body>
+    <form runat="server">
    
         <main class="main-login">
-            <div>
-                <p>Nombre:</p>
-                <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>    
-            </div>
-
-            <div>
-                <p>Contraseña:</p>
-                <asp:TextBox ID="txtContraseña" runat="server" CssClass="textBox"></asp:TextBox> 
-            </div>
             
-            <div>
-                <asp:Button ID="btnEntrar" runat="server" OnClick="Button1_Click" Text="Entrar" />
-            </div>
+                
+                <h1 class:"h1-login"> GIM </h1>
+           
+          
+       
+                <p class:"p-login">Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtNombre" runat="server"></asp:TextBox></p>
+                    
+            
 
-            <div style="height: 29px">
-                <asp:Label ID="lblMensaje" runat="server" CssClass="label"></asp:Label>
-            </div>
+            
+                <p class:"p-login">Contraseña: <asp:TextBox ID="txtContraseña" runat="server"></asp:TextBox></p>
+                 
+           
+            
+            
+                <asp:Button ID="btnEntrar" runat="server" OnClick="Button1_Click" Text="Entrar" />
+           
+
+     
+                <asp:Label ID="lblMensaje" runat="server" CssClass="label-login"></asp:Label>
+           
 
         </main>
-  
+  </form>
 </body>
 </html>

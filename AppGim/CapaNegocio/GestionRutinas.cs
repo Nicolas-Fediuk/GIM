@@ -36,6 +36,11 @@ namespace CapaNegocio
             }
         }
 
+        public DataTable getRutinasActivas()
+        {
+            return dao.getRutinasTrue();
+        }
+
         public bool AgregarRutina(Rutinas r)
         {
             int fila = 0;

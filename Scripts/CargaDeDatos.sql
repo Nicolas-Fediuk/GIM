@@ -30,13 +30,25 @@ select 1,'Pablo Esteban Cabrera','Galicia',0,123456789,'01/02/2025',123 union
 select 2,'Andrea Paola Quinteros','Frances',1,987654321,'05/05/2028',216 
 go
 
+select * from Clientes
+go
+
 insert into Cuotas(DescripcionCuota_cuo,Precio_cuo)
-select 'Mensual',3000 union
-select 'Semanal',975 union
-select 'Dia',125
+select 'Dia',125 
+go
+insert into Cuotas(DescripcionCuota_cuo,Precio_cuo)
+select 'Semanal',975 
+go
+insert into Cuotas(DescripcionCuota_cuo,Precio_cuo)
+select 'Mensual',3000
 go
 
 select * from Cuotas;
+
+/* para resetear el identity*/
+dbcc checkident('Cuotas',reseed,0);
+
+delete from Cuotas;
 
 insert into CategoriasProductos(Descripcion_cp)
 select 'Bebidas' union
@@ -50,26 +62,30 @@ select 'c001',2,'Ena creatina',10,1345 union
 select 'p001',3,'Pulver protenia',23,956
 go
 
+select * from Productos
+go
+
 insert into Ventas(IdCliente_ve,Total_ve,MetodoDePago)
-select 2,240,1
+select 1,0,0
 go
 
 select * from Ventas
 go
 
 insert into DetalleVentasProductos(IdVenta_dvp,IdCliente_dvp,CodArticulo_dvp,Cantidad_dvp,Precio_dvp)
-select 1,2,'b001',2,120
+select 1,1,'b001',2,120
 go
 
 select * from DetalleVentasProductos
 go
 
 insert into Ventas(IdCliente_ve,Total_ve,MetodoDePago)
-select 1,3000,0
+select 2,0,0
 go
 
-insert into DetalleVentasCuotas(IdVenta_dvc,IdCliente_dvc,IdTipoCuota_dvc,Precio_dvc,FechaFin_dvc)
-select 2,1,2,3000,'2022/02/13'
+
+insert into DetalleVentasCuotas(IdVenta_dvc,IdCliente_dvc,IdTipoCuota_dvc,Precio_dvc)
+select 5,1,3,3000
 go
 
 select * from DetalleVentasCuotas

@@ -33,7 +33,14 @@ namespace CapaDao
         public DataTable getTablaClienteId(Clientes cli)
         {
             string consulta = TodosClientes + " where IdCliente_cli= " + cli.IdCliente1;
-            DataTable tabla = ad.ObtenerTabla("Cliente", consulta);
+            DataTable tabla = ad.ObtenerTabla("Clientes", consulta);
+            return tabla;
+        }
+
+        public DataTable getTablaListaCliente()
+        {
+            string consulta = "select concat(Nombre_cli,' ',Apellido_cli) as [NombreYapellido], Edad_cli,Telefono_cli, ProblemasDeSalud_cli, Nombre_ru, DescripcionCuota_cuo,FechaInicio_dvc,FechaFin_dvc from Clientes inner join Rutinas on Clientes.IdRutina_cli = Rutinas.IdRutina_ru inner join DetalleVentasCuotas on Clientes.IdCliente_cli = DetalleVentasCuotas.IdCliente_dvc inner join Cuotas on Cuotas.IdTipoCuota_cuo = DetalleVentasCuotas.IdTipoCuota_dvc";
+            DataTable tabla = ad.ObtenerTabla("Clientes", consulta);
             return tabla;
         }
 
@@ -61,7 +68,7 @@ namespace CapaDao
             SqlParameter parametros = new SqlParameter();
             parametros = comando.Parameters.Add("@NOMBRE_CLI", SqlDbType.VarChar);
             parametros.Value = cli.Nombre1;
-            parametros = comando.Parameters.Add("@APELLLIDO",SqlDbType.VarChar); ;
+            parametros = comando.Parameters.Add("@APELLIDO_CLI",SqlDbType.VarChar); ;
             parametros.Value = cli.Apellido1;
             parametros = comando.Parameters.Add("@EDAD_CLI", SqlDbType.Char);
             parametros.Value = cli.Edad1;
@@ -73,8 +80,6 @@ namespace CapaDao
             parametros.Value = cli.Direccion1;
             parametros = comando.Parameters.Add("@PROBLEMAS_CLI", SqlDbType.Text);
             parametros.Value = cli.ProblemasDeSalud1;
-            parametros = comando.Parameters.Add("@IDRUTINA_CLI", SqlDbType.Int);
-            parametros.Value = cli.IdRutina1;
         }
 
         public bool ModificarCliente(Clientes cli)

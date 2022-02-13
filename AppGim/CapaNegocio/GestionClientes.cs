@@ -24,6 +24,11 @@ namespace CapaNegocio
             return dao.getTablaClienteId(cli);  
         }
 
+        public DataTable ObtenerListaClientes()
+        {
+            return dao.getTablaListaCliente();
+        }
+
         public bool ExisteCliente(Clientes cli)
         {
             if (dao.ExisteCliente(cli))
@@ -39,11 +44,9 @@ namespace CapaNegocio
         public bool AgregarCliente(Clientes cli)
         {
             int fila = 0;
-            if (dao.ExisteCliente(cli) == false)
-            {
-                fila = dao.AgregarCliente(cli);
-            }
-
+ 
+            fila = dao.AgregarCliente(cli);
+            
             if(fila == 1)
             {
                 return true;

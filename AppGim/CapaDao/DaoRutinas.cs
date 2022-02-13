@@ -30,11 +30,19 @@ namespace CapaDao
             return tabla;
         }
 
+        public DataTable getRutinasTrue()
+        {
+            string consulta =  "select Nombre_ru from Rutinas where Estado_ru = 1";
+            DataTable tabla = ad.ObtenerTabla("Rutinas", consulta);
+            return tabla;
+
+            
+        }
+
         public DataTable getTablaRutinas()
         {
             DataTable tabla = ad.ObtenerTabla("Rutinas",TodasRutinas);
             return tabla;
-
         }
 
         public Boolean ExisteRutina(Rutinas r)

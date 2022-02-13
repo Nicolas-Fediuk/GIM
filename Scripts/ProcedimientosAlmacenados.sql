@@ -157,7 +157,7 @@ create procedure sp_AgregarCliente
 (
 @NOMBRE_CLI varchar(30),
 @APELLIDO_CLI varchar(30),
-@EDAD_CLI char(2),
+@EDAD_CLI int,
 @TELEFONO_CLI char(10),
 @EMAIL_CLI varchar(30),
 @DIRECCION_CLI varchar(40),
@@ -175,7 +175,7 @@ create procedure sp_ModificarCliente
 @IDCLIENTE_CLI bigint,
 @NOMBRE_CLI varchar(30),
 @APELLIDO_CLI varchar(30),
-@EDAD_CLI char(2),
+@EDAD_CLI int,
 @TELEFONO_CLI char(10),
 @EMAIL_CLI varchar(30),
 @DIRECCION_CLI varchar(40),
@@ -202,10 +202,7 @@ create procedure sp_EliminarCliente
 @IDCLIENTE_CLI bigint
 )
 as
-update Clientes
-set
-Estado_cli = 'false'
-where IdCliente_cli = @IDCLIENTE_CLI
+delete from Clientes where IDCLIENTE_CLI = IdCliente_cli
 return
 go
 
@@ -320,17 +317,16 @@ go
 	/*			Detalle de Ventas		*/
 /*---------------------------------------------------*/
 
-create procedure sp_AgregarDetalleVentaCuotas
+create or alter procedure sp_AgregarDetalleVentaCuotas
 (
 @IDVENTA_DVC bigint,
 @IDCLIENTE_DVC bigint,
 @IDTIPOCUOTA_DVC int,
-@PRECIO_DVC decimal(18,0),
-@FECHAFIN_DVC date
+@PRECIO_DVC decimal(18,0)
 )
 as
-insert into DetalleVentasCuotas(IdVenta_dvc,IdCliente_dvc,IdTipoCuota_dvc,Precio_dvc,FechaFin_dvc)
-values (@IDVENTA_DVC,@IDCLIENTE_DVC,@IDTIPOCUOTA_DVC,@PRECIO_DVC,@FECHAFIN_DVC)
+insert into DetalleVentasCuotas(IdVenta_dvc,IdCliente_dvc,IdTipoCuota_dvc,Precio_dvc)
+values (@IDVENTA_DVC,@IDCLIENTE_DVC,@IDTIPOCUOTA_DVC,@PRECIO_DVC)
 return
 go
 
