@@ -20,7 +20,7 @@ namespace CapaDao
             cli.IdCliente1 = Convert.ToInt32(tabla.Rows[0][0].ToString());
             cli.Nombre1 = tabla.Rows[0][1].ToString();
             cli.Apellido1 = tabla.Rows[0][2].ToString();
-            cli.Edad1 = tabla.Rows[0][3].ToString();
+            cli.Edad1 =Convert.ToInt32(tabla.Rows[0][3]);
             cli.Telefono1 = tabla.Rows[0][4].ToString();
             cli.Email1 = tabla.Rows[0][5].ToString();
             cli.Direccion1 = tabla.Rows[0][6].ToString();
@@ -70,7 +70,7 @@ namespace CapaDao
             parametros.Value = cli.Nombre1;
             parametros = comando.Parameters.Add("@APELLIDO_CLI",SqlDbType.VarChar); ;
             parametros.Value = cli.Apellido1;
-            parametros = comando.Parameters.Add("@EDAD_CLI", SqlDbType.Char);
+            parametros = comando.Parameters.Add("@EDAD_CLI", SqlDbType.Int);
             parametros.Value = cli.Edad1;
             parametros = comando.Parameters.Add("@TELEFONO_CLI", SqlDbType.VarChar);
             parametros.Value = cli.Telefono1;
@@ -106,7 +106,7 @@ namespace CapaDao
             parametros.Value = cli.Nombre1;
             parametros = comando.Parameters.Add("@APELLLIDO", SqlDbType.VarChar); ;
             parametros.Value = cli.Apellido1;
-            parametros = comando.Parameters.Add("@EDAD_CLI", SqlDbType.Char);
+            parametros = comando.Parameters.Add("@EDAD_CLI", SqlDbType.Int);
             parametros.Value = cli.Edad1;
             parametros = comando.Parameters.Add("@TELEFONO_CLI", SqlDbType.VarChar);
             parametros.Value = cli.Telefono1;

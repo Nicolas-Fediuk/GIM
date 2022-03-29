@@ -103,5 +103,7 @@ namespace CapaDao
             parametros = comando.Parameters.Add("@IDRUTINA_RU", SqlDbType.Int);
             parametros.Value = r.IdRutina1;
         }
+        
+        
     }
 }

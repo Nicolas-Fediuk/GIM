@@ -11,7 +11,7 @@ namespace Entidades
         private int IdCliente;
         private string Nombre;
         private string Apellido;
-        private string Edad;
+        private int Edad;
         private string Telefono;
         private string Email;
         private string Direccion;
@@ -27,7 +27,7 @@ namespace Entidades
         public int IdCliente1 { get => IdCliente; set => IdCliente = value; }
         public string Nombre1 { get => Nombre; set => Nombre = value; }
         public string Apellido1 { get => Apellido; set => Apellido = value; }
-        public string Edad1 { get => Edad; set => Edad = value; }
+        public int Edad1 { get => Edad; set => Edad = value; }
         public string Telefono1 { get => Telefono; set => Telefono = value; }
         public string Email1 { get => Email; set => Email = value; }
         public string Direccion1 { get => Direccion; set => Direccion = value; }

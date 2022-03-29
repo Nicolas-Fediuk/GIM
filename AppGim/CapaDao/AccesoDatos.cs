@@ -70,6 +70,8 @@ namespace CapaDao
             return FilasCambiadas;
         }
 
+        
+
         public Boolean existe(string consulta)
         {
             Boolean estado = false;
@@ -82,6 +84,10 @@ namespace CapaDao
             }
             return estado;
         }
+
+        
+
+        
 
 
     }

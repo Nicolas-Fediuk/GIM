@@ -31,8 +31,13 @@
             Problemas de salud:<asp:TextBox ID="txtPds" runat="server"></asp:TextBox>
             <br />
             <br />
-            Rutina:<asp:DropDownList ID="ddlRutinas" runat="server" AutoPostBack="True">
+            Rutina:<asp:DropDownList ID="ddlRutinas" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Nombre_ru" DataValueField="Nombre_ru">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_GimConnectionString %>" SelectCommand="SELECT [Nombre_ru] FROM [Rutinas] WHERE ([Estado_ru] = @Estado_ru)">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="true" Name="Estado_ru" Type="Boolean" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
         <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>

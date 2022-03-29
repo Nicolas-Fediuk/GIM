@@ -16,32 +16,20 @@ namespace Vistas.Clientes
         GestionClientes gc = new GestionClientes();
         GestionRutinas gr = new GestionRutinas();
         Entidades.Clientes cli = new Entidades.Clientes(); 
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            string ruta = "Data Source=DESKTOP-PCL9NE0\\SQLEXPRESS;Initial Catalog=DB_Gim;Integrated Security=True";
-            string consulta = "select IdRutina_ru, Nombre_ru from Rutinas where Estado_ru = 1";
-            if (!IsPostBack)
-            {
-                DataSet ds = new DataSet();
-                SqlConnection sc = new SqlConnection(ruta);
-                sc.Open();
-                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, sc);
-                adaptador.Fill(ds, "Rutinas");
-                ddlRutinas.DataSource = ds.Tables["Rutinas"];
-                ddlRutinas.DataTextField = "Nombre_ru";
-                ddlRutinas.DataValueField = "IdRutina_ru";
-                ddlRutinas.DataBind();
-                sc.Close();
-            }
             
+
         }
-       
+        
+
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             cli.Nombre1 = txtNombre.Text;
             cli.Apellido1 = txtApellido.Text;
-            cli.Edad1 = txtEdad.ToString();
+            cli.Edad1 = Convert.ToInt32(txtEdad.Text);
             cli.Telefono1 = txtTelefono.ToString();
             cli.Email1 = txtEmail.Text;
             cli.Direccion1 = txtDireccion.Text;
@@ -56,5 +44,7 @@ namespace Vistas.Clientes
                 lblMensaje.Text = "El cliente no pudo ser cargado";
             }
         }
+
+        
     }
 }
